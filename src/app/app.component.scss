@@ -179,6 +179,12 @@ main{
                     height: fit-content;
                 }
             }
+
+            @media screen and (max-width: 991px) {
+                .d-flex.h-100{
+                    flex-direction: column;
+                }
+            }
         }
     }
 
