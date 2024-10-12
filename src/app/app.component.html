@@ -4,12 +4,29 @@
     <nav class="navigate d-flex position-relative">
       <div class="hover position-absolute " #hoverDiv></div>
       <div class="position-relative d-flex gap-3">
+        @if(!isMobile){
+          <ng-template ngFor let-data [ngForOf]="menu">
+            <button (mouseenter)="hover($event)" (click)="slowMove(data)">{{data}}</button>
+          </ng-template>
+        }@else{
+          <svg xmlns="http://www.w3.org/2000/svg" (click)="openCloseMenu()" [ngClass]="{'open': isOpenMenuMobile}" viewBox="0 0 24 24" fill="none">
+            <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        }
+      </div>
+    </nav>
+  </div>
+  @if(isMobile){
+    <div class="menu-mobile" [ngClass]="{'open': isOpenMenuMobile}">
+      <div #menuMobile class="d-flex flex-column">
         <ng-template ngFor let-data [ngForOf]="menu">
           <button (mouseenter)="hover($event)" (click)="slowMove(data)">{{data}}</button>
         </ng-template>
       </div>
-    </nav>
-  </div>
+    </div>
+  }
 </header>
 <main>
   <div class="position-relative video">
@@ -171,7 +188,7 @@
   
 </main>
 <footer class="py-4">
-  <div class="d-flex justify-content-between px-2 ">
+  <div class="d-flex justify-content-between">
     <div class="d-flex flex-column gap-2">
         <p class="mb-0"><b>Email:</b> Jonathanlasalla&#64;gmail.com</p>
         <p class="mb-0"><b>Tel:</b> +55 31 99515-4984</p>

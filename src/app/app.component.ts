@@ -16,13 +16,15 @@ export class AppComponent {
   @ViewChild("serviços") serviços!: ElementRef;
   @ViewChild("sobreNós") sobrenós!: ElementRef;
   @ViewChild("contato") contato!: ElementRef;
-
+  isMobile: boolean = window.innerWidth <= 991
+  isOpenMenuMobile: boolean = false
+  @ViewChild("menuMobile") menuMobile!: ElementRef
 
   ngAfterViewInit(){
     this.observerSelector(this.serviços.nativeElement, "in-view-port")
     this.observerSelector(this.sobrenós.nativeElement, "in-view-port")
     this.observerSelector(this.contato.nativeElement, "in-view-port")
-
+    this.insertHeightInMenu()
   }
 
   menu: string[] = ["Serviços", "Sobre Nós", "Contato"]
@@ -56,11 +58,20 @@ export class AppComponent {
   }
 
   slowMove(data: string): void{
-    console.log(data.split(" ").join(""))
+    this.isOpenMenuMobile = false
     this[<"contato" | "sobrenós" | "serviços">data.split(" ").join("").toLowerCase()].nativeElement.scrollIntoView()
   }
 
   redirectTo(url: string){
     window.open(url, "_blank")
+  }
+
+  openCloseMenu(){
+    this.isOpenMenuMobile = !this.isOpenMenuMobile
+  }
+
+  insertHeightInMenu(): void{
+    const {offsetHeight, parentElement} = this.menuMobile.nativeElement
+    parentElement.style.setProperty('--height-open', `${offsetHeight}px`)
   }
 }
