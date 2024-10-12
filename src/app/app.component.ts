@@ -16,9 +16,10 @@ export class AppComponent {
   @ViewChild("serviços") serviços!: ElementRef;
   @ViewChild("sobreNós") sobrenós!: ElementRef;
   @ViewChild("contato") contato!: ElementRef;
+  @ViewChild("menuMobile") menuMobile!: ElementRef
   isMobile: boolean = window.innerWidth <= 991
   isOpenMenuMobile: boolean = false
-  @ViewChild("menuMobile") menuMobile!: ElementRef
+  isApple: boolean = /iPad|iPhone|iPod/.test(navigator.userAgent)
 
   ngAfterViewInit(){
     this.observerSelector(this.serviços.nativeElement, "in-view-port")
