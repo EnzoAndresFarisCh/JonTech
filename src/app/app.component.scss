@@ -120,6 +120,10 @@ main{
         background-color: #000;
         padding-left: 10%;
         padding-right: 10%;
+
+        .max-width-card{
+            max-height: 146px !important;
+        }
         h2{
             transition: transform .55s ease-in-out .3s, opacity .7s ease-out .3s;
             color: #fff;
