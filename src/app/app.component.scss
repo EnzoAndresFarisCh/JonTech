@@ -304,6 +304,11 @@ footer{
             fill: #fff;
         }
     }
+    @media screen and (max-width: 991px) {
+        & > div.d-flex{
+            flex-direction: column;
+        }
+    }
 }
 
 .notification{
