@@ -81,7 +81,7 @@ header{
 main{
    & > div.video{
         @media screen and (max-width: 991px) {
-            &{height: 100vh;}
+            &{height: 80vh;}
         }
         height: calc(100dvh - 60px);
         .icons{
@@ -117,7 +117,7 @@ main{
             align-content: center;
             padding:0 10%;
             @media screen and (max-width: 991px) {
-                & {height: 100vh}
+                & {height: 80vh}
             } 
             height: calc(100dvh - 60px);
             background: linear-gradient(to top, rgb(0 0 0), rgb(0 0 0 / 53%) 60%);
@@ -157,7 +157,7 @@ main{
         }
         video{
             @media screen and (max-width: 991px) {
-                & { height: 100vh };
+                & { height: 80vh };
             }
             height: calc(100dvh - 60px);
             object-fit: cover;
