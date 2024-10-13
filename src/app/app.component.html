@@ -32,10 +32,10 @@
 </header>
 <main>
   <div class="position-relative video">
-      <video *ngIf="!isApple" class="w-100" autoplay="autoplay" loop muted oncanplay="this.play()" onloadedmetadata="this.muted = true">
+      <video *ngIf="isApple" class="w-100" autoplay="autoplay" loop muted oncanplay="this.play()" onloadedmetadata="this.muted = true">
         <source  src="assets/electronicv.webm" type="video/webm">
       </video>
-      <img *ngIf="isApple" class="w-100" src="assets/imgBanne.png" alt="">
+      <img *ngIf="!isApple" class="w-100" src="assets/imgBanne.png" alt="">
       <div class="position-absolute top-0 start-0 w-100 camada">
         <h1>JonTech</h1>
         <p>Somos uma empresa especializada em manutenção de iPhones, oferecendo soluções rápidas e confiáveis. Com foco em excelência e qualidade, garantimos a melhor experiência em reparos.</p>
