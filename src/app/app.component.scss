@@ -80,6 +80,9 @@ header{
 
 main{
    & > div.video{
+        @media screen and (max-width: 991px) {
+            &{height: 100vh;}
+        }
         height: calc(100dvh - 60px);
         .icons{
             button{
@@ -112,7 +115,10 @@ main{
 
         .camada{
             align-content: center;
-            padding: 0 10%;
+            padding:0 10%;
+            @media screen and (max-width: 991px) {
+                & {height: 100vh}
+            } 
             height: calc(100dvh - 60px);
             background: linear-gradient(to top, rgb(0 0 0), rgb(0 0 0 / 53%) 60%);
             backdrop-filter: blur(1px);
@@ -150,13 +156,16 @@ main{
             }
         }
         video{
+            @media screen and (max-width: 991px) {
+                & { height: 100vh };
+            }
             height: calc(100dvh - 60px);
             object-fit: cover;
         }
 
         img{
             height: 100%;
-            object-fit: none;
+            object-fit: cover;
             object-position: left;
         }
     }
