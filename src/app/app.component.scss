@@ -373,7 +373,7 @@ footer{
     right: 10px;
     top: 10px;
     width: 200px;
-    height: 40px;
+    font-size: 14px;
     background-color: #03b400;
     color: #fff;
     border: 1px solid #03b400;
@@ -381,6 +381,7 @@ footer{
     border-radius: 6px;
     align-content: center;
     transition: opacity .5s ease-out;
+    z-index: 99999;
     @starting-style{
         opacity: 0;
     }
