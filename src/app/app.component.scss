@@ -129,6 +129,12 @@ main{
             h1{
                 color: #DCDCDE;
                 font-size: 46px;
+
+                @media (width <= 991px) {
+                    
+                    font-size: 38px;
+                  }
+                  
                 transition: color .7s ease-in .8s;
                 @starting-style{
                     color: transparent
@@ -137,6 +143,11 @@ main{
             p{
                 color: #DCDCDE;
                 font-size: 20px;
+
+                @media (width <= 991px) {
+                    
+                    font-size: 18px;
+                  }
                 max-width: 650px;
                 transition: color .7s ease-in 1.2s;
                 @starting-style{
