@@ -23,7 +23,7 @@
 (() => {
     setTimeout(() => {
         const button = document.querySelector("#submit-button")
-        button.addEventListener("click", () => {
+        button?.addEventListener("click", () => {
             const v =[...document.querySelectorAll(".contato input[required]")].some(e => !e.value)
             if(!v){ 
                 document.querySelector("#submit-button").classList.add("loading")
