@@ -3,6 +3,12 @@
     font-family: 'Poppins';
 }
 
+@media (width <= 991px) {
+  body{
+    zoom: .8;
+  }
+}
+
 body::-webkit-scrollbar {
     width: 12px;           
   }
