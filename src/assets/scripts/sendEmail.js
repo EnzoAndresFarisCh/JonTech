@@ -1,4 +1,4 @@
-/* function sendEmail(){
+ function sendEmail(){
     const getSelector = (sel) => {
         return document.querySelector(sel)?.value
     }
@@ -31,4 +31,4 @@
             }
         })
     }, 1000)
-})() */
+})() 
