@@ -182,6 +182,19 @@ main{
             height: 100%;
             object-fit: cover;
             object-position: left;
+
+            &.logo{
+                width: 100%;
+                height: 54px;
+                margin-left: -13px;
+                margin-bottom: 16px;
+                object-fit: contain;
+                opacity: 1;
+                transition: opacity .7s ease-in .8s;
+                @starting-style{
+                    opacity: 0
+                }
+            }
         }
     }
 
