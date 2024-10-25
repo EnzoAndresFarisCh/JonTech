@@ -1,7 +1,10 @@
 header{
+    img{
+        height: 50px;
+    }
     div{
         height: auto;
-        background-color: #000;
+        background-color: #343434;
         nav{
             .hover{
                 border-radius: 6px;
@@ -19,17 +22,17 @@ header{
             button{
                 border-style: hidden;
                 background-color: transparent;
-                color: #f2f2f2;
+                color: #DCDCDE;
                 font-size: 16px;
                 &.orcamento{
                     transition: color .15s ease-in, background-color .15s ease-out;
-                    border: 1px solid #fff;
+                    border: 1px solid #DCDCDE;
                     border-style: inset;
                     border-radius: 14px;
 
                     &:hover{
-                        background-color: #fff;
-                        color: #000;
+                        background-color: #DCDCDE;
+                        color: #343434;
                     }
                 }
             }
@@ -40,7 +43,7 @@ header{
 
 main{
    & > div.video{
-        height: calc(100dvh - 60px);
+        height: calc(100dvh - 30px);
         .icons{
             button{
                 background-color: transparent;
@@ -51,7 +54,7 @@ main{
                     width: 26px;
                     height: 26px;
                     path{
-                    fill: #fff;
+                    fill: #DCDCDE;
                 }
 
             }
@@ -73,11 +76,11 @@ main{
         .camada{
             align-content: center;
             padding: 0 10%;
-            height: calc(100dvh - 60px);
-            background: linear-gradient(to top, rgb(0 0 0), rgb(0 0 0 / 53%) 60%);
+            height: calc(100dvh - 30px);
+            background: linear-gradient(to top, #00102c, #000816c2 11%, rgb(0 0 0 / 79%) 24%);
             backdrop-filter: blur(1px);
             h1{
-                color: #fff;
+                color: #DCDCDE;
                 font-size: 46px;
                 transition: color .7s ease-in .8s;
                 @starting-style{
@@ -85,7 +88,7 @@ main{
                 }
             }
             p{
-                color: #fff;
+                color: #DCDCDE;
                 font-size: 20px;
                 max-width: 650px;
                 transition: color .7s ease-in 1.2s;
@@ -96,40 +99,59 @@ main{
             button{
                 backdrop-filter: blur(4px);
                 border-style: inset;
-                border: 1px solid #fff;
+                border: 1px solid #DCDCDE;
                 border-radius: 6px;
                 background-color: #77777733;
-                color: #fff;
+                color: #DCDCDE;
                 font-size: 18px;
                 padding: 4px 30px;
                 transition: color 0.15s ease-in, background-color 0.15s ease-out;            
                 &:hover{
-                    background-color: #fff;
-                    color: #000;
+                    background-color: #DCDCDE;
+                    color: #343434;
                 }
             }
         }
         video{
-            height: calc(100dvh - 60px);
+            height: calc(100dvh - 30px);
             object-fit: cover;
         }
     }
 
     .servicos{
-        
-        background-color: #000;
-        padding-left: 10%;
-        padding-right: 10%;
+        position: relative;
+       &::before{
+        content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #00102c, rgba(0, 0, 0, 0) 80%);
+    height:3%;
+    width: 100%;
+    z-index: 0;
+       }
+        /* background: #343434; */
+        .container-servicos{
+            padding-left: 10%;
+            padding-right: 10%;
+          
+            overflow: auto;
+            background: linear-gradient(315deg, #151b38 3%, #00102c 38%, #00042c 68%, #002669 98%);
+            animation: gradient 15s ease infinite;
+            background-size: 400% 400%;
+            background-attachment: fixed;
+        }
+
         h2{
             transition: transform .55s ease-in-out .3s, opacity .7s ease-out .3s;
-            color: #fff;
+            color: #DCDCDE;
             transform: translateX(-200px);
             opacity: 0;
         }
 
         &.in-view-port{
             h2{
-                color: #fff;
+                color: #DCDCDE;
                 transform: translateX(0px);
                 opacity: 1;
             }
@@ -143,40 +165,65 @@ main{
             opacity: 0;
             transition: opacity 1s ease-out .5s;
             hr{
-                color: #fff;
+                color: #DCDCDE;
                 margin: 50px 0 50px;
             }
             h3, p{
-                color: #d4d4d4e2;
+                color: #E6E6ED;
+                margin: 0;
+                font-size: 14px;
+            }
+
+            h3{
+                font-size: 24px;
             }
             h4{
-                color: #fff;
+                color: #DCDCDE;
+                font-size: 18px;
             }
             svg{
                 width: 40px;
                 height: auto;
 
                 path{
-                    stroke: #d4d4d4e2;
+                    stroke: #005CFF;
                 }
 
                 &.fill{
                     path{
-                        fill: #d4d4d4e2;;
+                        fill: #005CFF;;
                     }
                 }
 
                 g{
                     path{
-                        fill: rgba(212, 212, 212, 0.8862745098)
+                        fill: #005CFF
                     }
                 }
             }
 
             section{
+                display: flex;
+                gap: 20px;
+                flex-flow: row-reverse;
                 svg{
                     min-width: 40px;
                     height: fit-content;
+                }
+
+                .container-card{
+                    flex-direction: column;
+                    padding: 12px;
+                    border: 1px solid #dedede;
+                    border-radius: 6px;
+
+                    .d-flex.h-fit-content{
+                        background: rgba(222, 222, 222, 0.1882352941);
+                        border-radius: 6px;
+                        padding: 12px;
+                        align-items: center;
+                        gap: 8px;
+                    }
                 }
             }
 
@@ -197,32 +244,40 @@ main{
             transform: translateX(0px);
         }
         padding: 0 10%;
-        background: linear-gradient(
-            to bottom,
-            rgb(0, 0, 0) 77%,
-            rgba(255, 255, 255, 0.65) 155%)
+     
 
         h2, p{
-            color: #fff;
+            color: #343434;
         }
 
         p{
             font-size: 18px;
         }
+
+        section{
+            border-top: 1px solid #343434;
+            img{
+                width: 20%;
+                height: 20%;
+                border-radius: 50%;
+            }
+        }
+
     }
 
     hr{
-        background-color: #000;
+        background-color: #343434;
         margin: 0;
-        color: #000000;
+        color: #343434;
     }
 
     .contato{
         padding: 0 10%;
-        background-color: #000;
+        /* background: linear-gradient(to top, #343434 34%, #002564 85%); */
+        background-color: #343434;
 
         h2, p{
-            color: #fff;
+            color: #DCDCDE;
         }
 
         input{
@@ -237,21 +292,21 @@ main{
 
             button{
                 font-size: 16px;
-                border: 1px solid #fff;;
-                background-color: #000;
-                color: #fff;;
+                border: 1px solid #DCDCDE;;
+                background-color: #343434;
+                color: #DCDCDE;;
                 padding: 4px 30px;
                 border-radius: 6px;
                 transition: color .15s ease-in, background-color .15s ease-out;
                 &:hover{
-                    color: #000;
-                    background-color: #fff;
+                    color: #343434;
+                    background-color: #DCDCDE;
                 }
 
                 &.loading{
                     position: relative;
                     color: transparent;
-                    background-color: #fff;
+                    background-color: #DCDCDE;
                     &::after{
                         content: "";
                         position: absolute;
@@ -260,7 +315,7 @@ main{
                         transform: translate(-50%, -50%);
                         height: 16px;
                         width: 16px;
-                        border: 3px solid #000;
+                        border: 3px solid #343434;
                         border-radius: 50%;
                         border-bottom: 0;
                         animation: loop 1.8s ease-in-out infinite;
@@ -288,10 +343,10 @@ main{
 }
 
 footer{
-    border-top: 1px solid #fff;
-    background-color: #000;
+    border-top: 1px solid #DCDCDE;
+    background-color: #343434;
     p{
-        color: #ffffff;
+        color: #DCDCDE;
     }
     span{
         font-size: 12px;
@@ -301,8 +356,12 @@ footer{
         border: none;
         background-color: transparent;
         path{
-            fill: #fff;
+            fill: #DCDCDE;
         }
+    }
+
+    & > div{
+        padding: 0 10%;
     }
     @media screen and (max-width: 991px) {
         & > div.d-flex{
@@ -319,7 +378,7 @@ footer{
     width: 200px;
     height: 40px;
     background-color: #03b400;
-    color: #fff;
+    color: #DCDCDE;
     border: 1px solid #03b400;
     text-align: center;
     border-radius: 6px;
@@ -327,5 +386,65 @@ footer{
     transition: opacity .5s ease-out;
     @starting-style{
         opacity: 0;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
     }
 }
