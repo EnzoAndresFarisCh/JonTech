@@ -25,7 +25,9 @@ export class AppComponent {
     this.observerSelector(this.serviços.nativeElement, "in-view-port")
     this.observerSelector(this.sobrenós.nativeElement, "in-view-port")
     this.observerSelector(this.contato.nativeElement, "in-view-port")
-    this.insertHeightInMenu()
+    if(this.isMobile){
+      this.insertHeightInMenu()
+    }
   }
 
   menu: string[] = ["Serviços", "Sobre Nós", "Contato"]
@@ -72,7 +74,9 @@ export class AppComponent {
   }
 
   insertHeightInMenu(): void{
-    const {offsetHeight, parentElement} = this.menuMobile.nativeElement
-    parentElement.style.setProperty('--height-open', `${offsetHeight}px`)
+    
+      const {offsetHeight, parentElement} = this.menuMobile?.nativeElement
+      parentElement.style.setProperty('--height-open', `${offsetHeight}px`)
+    
   }
 }
