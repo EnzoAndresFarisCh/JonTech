@@ -1,6 +1,7 @@
 {
   "name": "jonathan-tech",
   "version": "0.0.0",
+  "homepage": "https://EnzoAndresFarisCh.github.io/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
